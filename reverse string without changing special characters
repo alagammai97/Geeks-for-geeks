@@ -1,0 +1,41 @@
+https://ide.geeksforgeeks.org/L2T2izdeJd --- link for published code
+#code
+##import libraries
+import string
+a_z = string.ascii_lowercase
+##input string and initialization
+string = "ABC#E$F$G*X%Z"
+string1 = string.lower()
+special =[]
+special_index = []
+alpha_list = []
+##checking alphabets and seperating alphabets and specialcharacters with index
+for i in range(len(string1)):
+    if string1 [i] not in a_z:
+        special.append(string1[i])
+        special_index.append(i)
+    else:
+        alpha_list.append(string1[i])
+##printing all seperated lists
+print(special)
+print(alpha_list)
+print(special_index)
+reverse_alpha =[]
+##reversing alphabets alone
+for i in range(len(alpha_list)-1,-1,-1):
+    reverse_alpha.append(alpha_list[i])
+print(reverse_alpha)
+sfinal = reverse_alpha
+###inserting special characters in reversed list of alphabets
+for i,j in zip(special_index,special):
+    sfinal.insert(i,j)
+sfinal
+#printing result as a string
+result = ""
+for i in sfinal:
+    result+= i
+##if input string is upper,print uppercase, else lower result
+if string.isupper()== True:
+    print("New string:",result.upper())
+else:
+    print("New string:",result)
